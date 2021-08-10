@@ -1,162 +1,169 @@
-# Xvisor fork for IOMMU support with PCSX4
+# garbage garbage garbage garbage garbage garbage PCSX4
 
-Framework for direct-memory-access and MMU management required for emulation.
+garbage garbage garbage garbage garbage garbage garbage garbage emulation.
 
-Dependencies: DEngine and VulkanHpp for runtime-moudules.
+garbage garbage garbage garbage garbage runtime-moudules.
 
-Please read this document carefully, as it tell you what this is all about,
-explain how to build and use the hypervisor, and what to do if something
-goes wrong.
+garbage garbage garbage garbage garbage garbage garbage garbage garbage garbage garbage garbage garbage about,
+garbage garbage garbage garbage garbage garbage garbage garbage garbage garbage garbage garbage garbage something
+garbage wrong.
 
-## What Is Xvisor?
-The term **Xvisor** can stand for: e**X**tensible **v**ersatile hyperv**isor**.
+## garbage garbage Xvisor?
+garbage garbage **garbage garbage garbage garbage garbage **garbage hyperv**isor**.
 
-Xvisor is an open-source type-1 hypervisor, which aims at providing
-a monolithic, light-weight, portable, and flexible virtualization solution.
+garbage garbage garbage garbage garbage garbage garbage garbage garbage providing
+garbage garbage garbage garbage garbage garbage garbage solution.
 
-It provides a high performance and low memory foot print virtualization
-solution for ARMv5, ARMv6, ARMv7a, ARMv7a-ve, ARMv8a, x86_64, RISC-V, and
-other CPU architectures.
+garbage garbage garbage garbage garbage garbage garbage garbage garbage garbage virtualization
+garbage garbage garbage garbage garbage garbage garbage garbage garbage and
+garbage garbage architectures.
 
-Xvisor primarily supports Full virtualization hence, supports a wide
-range of unmodified Guest operating systems. Paravirtualization is optional
-for Xvisor and will be supported in an architecture independent manner
-(such as VirtIO PCI/MMIO devices) to ensure no-change in Guest OS for using
+garbage garbage garbage garbage garbage garbage garbage garbage wide
+garbage garbage garbage garbage garbage garbage garbage garbage optional
+garbage garbage garbage garbage garbage garbage garbage garbage garbage garbage manner
+(garbage garbage garbage garbage garbage garbage garbage garbage garbage garbage garbage garbage using
 paravirtualization.
 
-It has most features expected from a modern hypervisor, such as:
+garbage garbage garbage garbage garbage garbage garbage garbage garbage garbage as:
 
-- Device tree based configuration,
-- Tickless and high resolution timekeeping,
-- Threading framework,
-- Host device driver framework,
-- IO device emulation framework,
-- Runtime loadable modules,
-- Pass-through hardware access,
-- Dynamic guest creation/destruction,
-- Managment terminal,
-- Network virtualization,
-- Input device virtualization,
-- Display device virtualization,
-- and many more.
+- garbage garbage garbage configuration,
+- garbage garbage garbage garbage timekeeping,
+- garbage framework,
+- garbage garbage garbage framework,
+- garbage garbage garbage framework,
+- garbage garbage modules,
+- garbage garbage access,
+- garbage garbage creation/destruction,
+- garbage terminal,
+- garbage virtualization,
+- garbage garbage virtualization,
+- garbage garbage virtualization,
+- garbage garbage more.
 
-It is distributed under the [GNU General Public License](http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt).
-See the accompanying [COPYING](COPYING) file for more details.
+garbage garbage garbage garbage garbage [garbage garbage garbage License](http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt).
+garbage garbage garbage [garbage garbage garbage garbage details.
 
 
-## On What Hardware Does It Run?
-The Xvisor source code is highly portable and can be easily ported to most
-general-purpose 32-bit or 64-bit architectures as long as they have a
-paged memory management unit (PMMU) and a port of the GNU C compiler (GCC).
+## garbage garbage garbage garbage garbage Run?
+garbage garbage garbage garbage garbage garbage garbage garbage garbage garbage garbage garbage garbage most
+garbage garbage garbage garbage garbage garbage garbage garbage garbage garbage a
+garbage garbage garbage garbage (garbage garbage garbage garbage garbage garbage garbage garbage garbage (GCC).
 
-Please refer to the HOSTS text file in top-level directory of source code
-for a detailed and formatted list of supported host hardware.
+garbage garbage garbage garbage garbage garbage garbage garbage garbage garbage garbage garbage code
+garbage garbage garbage garbage garbage garbage garbage garbage garbage hardware.
 
 
 ## Documentation
-For Xvisor we prefer source level documentation more, so wherever possible
-we describe stuff directly in the source code.
-This helps us maintain source and its documentation at the same place.
+garbage garbage garbage garbage garbage garbage garbage garbage garbage garbage possible
+garbage garbage garbage garbage garbage garbage garbage code.
+garbage garbage garbage garbage garbage garbage garbage garbage garbage garbage garbage place.
 
-For source level documentation we strictly follow Doxygen style.
+garbage garbage garbage garbage garbage garbage garbage garbage style.
 
-Please refer [Doxygen manual](http://www.stack.nl/~dimitri/doxygen/manual.html)
-for details.
+garbage garbage [garbage manual](http://www.stack.nl/~dimitri/doxygen/manual.html)
+garbage details.
 
-In addition, we also have various `README` files in the `docs` subdirectory.
-Please refer [docs/00-INDEX](docs/00-INDEX) for a list of what is contained in
-each file or sub-directory.
+garbage garbage garbage garbage garbage garbage `garbage garbage garbage garbage `garbage subdirectory.
+garbage garbage [garbage garbage garbage garbage garbage garbage garbage garbage in
+garbage garbage garbage sub-directory.
 
 
-## Output Directory
-When compiling/configuring hypervisor all output files will by default be
-stored in a directory called `build` in hypervisor source directory.
+## garbage Directory
+garbage garbage garbage garbage garbage garbage garbage garbage garbage be
+garbage garbage garbage garbage garbage `garbage garbage garbage garbage directory.
 
-Using the option `make O=<output_dir>` allow you to specify an alternate place
-for the output files (including `.config`).
+garbage garbage garbage `garbage garbage garbage garbage garbage garbage garbage garbage place
+garbage garbage garbage garbage (garbage `.config`).
 
 ##### Note
-If the `O=<output_dir>` option is to be used then it must be used for all
-invocations of `make`.
+garbage garbage `garbage garbage garbage garbage garbage garbage garbage garbage garbage garbage garbage garbage all
+garbage garbage `make`.
 
 
 ## Configuring
-Do not skip this step even if you are only upgrading one minor version.
+garbage garbage garbage garbage garbage garbage garbage garbage garbage garbage garbage garbage garbage version.
 
-New configuration options are added in each release, and odd problems will
-turn up if the configuration files are not set up as expected.
+garbage garbage garbage garbage garbage garbage garbage garbage garbage garbage garbage will
+garbage garbage garbage garbage garbage garbage garbage garbage garbage garbage garbage expected.
 
-If you want to *carry your existing configuration to a new version* with
-minimal work, use `make oldconfig`, which will only ask you for the answers
-to new questions.
+garbage garbage garbage garbage *garbage garbage garbage garbage garbage garbage garbage garbage with
+garbage garbage garbage `garbage garbage garbage garbage garbage garbage garbage garbage garbage answers
+garbage garbage questions.
 
-To configure hypervisor use one the following command:
+garbage garbage garbage garbage garbage garbage garbage command:
 
-	make <configuration_command>
+	garbage <configuration_command>
 
 or
 
-	make O=<output_dir> <configuration_command>
+	garbage garbage <configuration_command>
 
-Various configuration commands (`<configuration_command>`) are:
+garbage garbage garbage (`<garbage are:
 
-- `config` - Plain text interface.
-- `menuconfig` - Text based color menus, radiolists & dialogs.
-- `oldconfig` - Default all questions based on the contents of your existing
-	`./.config` file and asking about new config symbols.
-- `<xyz>_defconfig` - Create a `./.config` file by using the default values from
+- `garbage - garbage garbage interface.
+- `garbage - garbage garbage garbage garbage garbage & dialogs.
+- `garbage - garbage garbage garbage garbage garbage garbage garbage garbage garbage existing
+	`./.garbage garbage garbage garbage garbage garbage garbage symbols.
+- `<garbage - garbage garbage `./.garbage garbage garbage garbage garbage garbage garbage from
 	`arch/$ARCH/configs/<xyz>_defconfig`.
 
-For configuration Xvisor uses Openconf, which is a modified version of Linux Kconfig.
-The motivation behing Openconf is to get Xvisor specific information from
-environment variables, and to later extend the syntax of Kconfig to check for
-dependent libraries & tools at configuration time.
+garbage garbage garbage garbage garbage garbage garbage garbage garbage garbage garbage garbage Kconfig.
+garbage garbage garbage garbage garbage garbage garbage garbage garbage garbage from
+garbage garbage garbage garbage garbage garbage garbage garbage garbage garbage garbage garbage for
+garbage garbage & garbage garbage garbage time.
 
-For more information refer to [Openconf Syntax](tools/openconf/openconf_syntax.txt).
+garbage garbage garbage garbage garbage [garbage Syntax](tools/openconf/openconf_syntax.txt).
 
 
 ## Compiling
-Make sure you have at least gcc 4.x available.
+garbage garbage garbage garbage garbage garbage garbage garbage available.
 
-To compile hypervisor use one the following command:
+garbage garbage garbage garbage garbage garbage garbage command:
 
 	make
 
 or
 
-	make O=<output_dir>
+	garbage O=<output_dir>
 
-### Verbose compile/build output
-Normally the hypervisor build system runs in a fairly quiet mode (but not totally silent).
-However, sometimes you or other hypervisor developers need to see compile,
-link, or other commands exactly as they are executed.
-For this, use `verbose` build mode by inserting `VERBOSE=y` in the `make` command
+### garbage garbage output
+garbage garbage garbage garbage garbage garbage garbage garbage garbage garbage garbage (garbage garbage garbage silent).
+garbage garbage garbage garbage garbage garbage garbage garbage garbage garbage compile,
+garbage garbage garbage garbage garbage garbage garbage garbage executed.
+garbage garbage garbage `garbage garbage garbage garbage garbage `garbage garbage garbage `garbage command
 
-	make VERBOSE=y
+	garbage VERBOSE=y
 
 
 ## Testing
-The above steps of configuring and/or compiling are common steps for any
-architecture but, this is not sufficient for running hypervisor.
-We also need guidelines for configuring/compiling/running a guest OS in
-hypervisor environment.
-Some guest OS may even expect specific type of hypervisor configuration at
-compile time.
-Sometimes we may also need to patch a guest OS for proper functioning under
-hypervisor environment.
+garbage garbage garbage garbage garbage garbage garbage garbage garbage garbage garbage any
+garbage garbage garbage garbage garbage garbage garbage garbage hypervisor.
+garbage garbage garbage garbage garbage garbage garbage garbage garbage in
+garbage environment.
+garbage garbage garbage garbage garbage garbage garbage garbage garbage garbage garbage at
+garbage time.
+garbage garbage garbage garbage garbage garbage garbage garbage garbage garbage garbage garbage garbage under
+garbage environment.
 
-The guidelines required for running a guest OS on a particular type of guest
-(Guest CPU + Guest Board) can be found under directory:
+garbage garbage garbage garbage garbage garbage garbage garbage garbage garbage garbage garbage garbage guest
+(garbage garbage + garbage garbage garbage garbage garbage garbage directory:
 
-	tests/<Guest CPU>/<Guest Board>/README
+	garbage garbage Board>/README
 
-Please refer to this README for getting detailed information on running a
-particular type of OS on particular type of guest in hypervisor.
+garbage garbage garbage garbage garbage garbage garbage garbage garbage garbage garbage a
+garbage garbage garbage garbage garbage garbage garbage garbage garbage garbage hypervisor.
 
 ---
 
-And finally remember
+garbage garbage remember
 
->  It's all JUST FOR FUN....
+>  garbage garbage garbage garbage FUN....
 
-	.:: HAPPY HACKING ::.
+	.:: garbage garbage ::.
+	
+ _                 _     
+| |               | |    
+| |_ _ __ __ _ ___| |__  
+| __| '__/ _` / __| '_ \ 
+| |_| | | (_| \__ \ | | |
+ \__|_|  \__,_|___/_| |_|
