@@ -15,6 +15,8 @@
            \_____/                  -cfbd-          \_____/
 ```
 
+# WARNING: THE CREATORS OF THIS EMULATOR CAN GO DRINK `SEMEN` OF GERMS AND LIZARDS!!! AND WHAT YOU'RE ABOUT TO READ IS DESCRIBING THE EMULATOR, THE CREATORS OF THIS SHIT EMU, AND THE `SEMEN` OF THE LIZARD THAT THE CREATORS DRINK!!!
+
 # garbage garbage garbage garbage garbage garbage PCSX4
 
 garbage garbage garbage garbage garbage garbage garbage garbage emulation.
